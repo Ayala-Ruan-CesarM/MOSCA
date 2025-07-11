@@ -186,6 +186,7 @@ dependencies:
   - sysroot_linux-64=2.17=h4a8ded7_13
   - tbb=2021.9.0=hf52228f_0
   - tk=8.6.12=h27826a3_0
+  - trinity=2.15.2=pl5321h077b44d_5
   - tqdm=4.65.0=pyhd8ed1ab_1
   - tzdata=2023c=h71feb2d_0
   - unicodedata2=15.0.0=py310h5764c6d_0

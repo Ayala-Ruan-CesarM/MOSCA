@@ -67,7 +67,11 @@ class Assembler:
                              output=f'{snakemake.params.output}/contigs.fasta')
             shutil.copyfile(f'{snakemake.params.output}/contigs.fasta', f'{snakemake.params.output}/scaffolds.fasta')   # TODO - put SOAPdenovo producing scaffolds from Megahit
         elif snakemake.params.assembler == 'trinity':
-            run_pipe_command(f"awk \'{{print $1}}\' {snakemake.params.output}/trinity/Trinity.fasta",
+            #Hay un error en que el archivo de salida de trinity se llama trinity.Trinity.fasta y esta en {snakemake.params.output}/
+            #run_pipe_command(f"awk \'{{print $1}}\' {snakemake.params.output}/trinity/Trinity.fasta",
+            #                 # >TRINITY_DN19419_c0_g1_i1 len=248 path=[0:0-247] -> TRINITY_DN19419_c0_g1_i1
+            #                 output=f'{snakemake.params.output}/contigs.fasta')
+            run_pipe_command(f"awk \'{{print $1}}\' {snakemake.params.output}/trinity.Trinity.fasta",
                              # >TRINITY_DN19419_c0_g1_i1 len=248 path=[0:0-247] -> TRINITY_DN19419_c0_g1_i1
                              output=f'{snakemake.params.output}/contigs.fasta')
             shutil.copyfile(f'{snakemake.params.output}/contigs.fasta', f'{snakemake.params.output}/scaffolds.fasta')
